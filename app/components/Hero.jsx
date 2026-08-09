@@ -3,6 +3,7 @@
 import SectionReveal from './SectionReveal';
 import GlassPanel from './GlassPanel';
 import { ArrowUpRight, ArrowDown } from 'lucide-react';
+import { handleMailTo } from '../utils/email';
 
 export default function Hero() {
   const handleScrollTo = (e, targetId) => {
@@ -53,9 +54,9 @@ export default function Hero() {
                 View Projects
                 <ArrowUpRight size={16} />
               </button>
-              <a href="mailto:shreenidhiv17@gmail.com" className="btn-editorial-dark text-xs sm:text-sm">
+              <button onClick={(e) => handleMailTo(e)} className="btn-editorial-dark cursor-pointer border-none text-xs sm:text-sm">
                 Contact
-              </a>
+              </button>
             </div>
           </SectionReveal>
         </GlassPanel>

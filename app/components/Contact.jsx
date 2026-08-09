@@ -4,12 +4,13 @@ import { useState } from 'react';
 import SectionReveal from './SectionReveal';
 import GlassPanel from './GlassPanel';
 import { ArrowUpRight, Copy, Check } from 'lucide-react';
+import { getObfuscatedEmail, handleMailTo } from '../utils/email';
 
 export default function Contact() {
   const [copied, setCopied] = useState(false);
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText('shreenidhiv17@gmail.com');
+    navigator.clipboard.writeText(getObfuscatedEmail());
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
   };
@@ -73,13 +74,13 @@ export default function Contact() {
                 <div>
                   <p className="eyebrow-label text-[#2DD4BF] mb-1.5 text-xs">EMAIL</p>
                   <div className="flex items-center gap-3 flex-wrap">
-                    <a
-                      href="mailto:shreenidhiv17@gmail.com"
-                      className="font-serif-title text-base sm:text-3xl text-[#FFFFFF] editorial-link break-all inline-flex items-center gap-1"
+                    <button
+                      onClick={(e) => handleMailTo(e)}
+                      className="font-serif-title text-base sm:text-3xl text-[#FFFFFF] editorial-link break-all inline-flex items-center gap-1 border-none bg-transparent cursor-pointer p-0 text-left"
                     >
                       shreenidhiv17@gmail.com
                       <ArrowUpRight size={18} className="shrink-0" />
-                    </a>
+                    </button>
                     <button
                       onClick={handleCopyEmail}
                       className="px-3 py-1.5 bg-white/10 border border-white/25 rounded-xs text-xs font-mono text-[#FFFFFF] flex items-center gap-1.5 cursor-pointer hover:bg-[#FFFFFF] hover:text-[#02170f] transition-all"
@@ -110,7 +111,7 @@ export default function Contact() {
                   const email = fd.get('email');
                   const subject = fd.get('subject') || 'Portfolio Contact';
                   const message = fd.get('message');
-                  window.location.href = `mailto:shreenidhiv17@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`From: ${name} (${email})\n\n${message}`)}`;
+                  handleMailTo(e, subject, `From: ${name} (${email})\n\n${message}`);
                 }}
               >
                 <div className="flex flex-col gap-1.5">

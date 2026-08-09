@@ -22,11 +22,11 @@ export default function Education() {
         </SectionReveal>
 
         <SectionReveal delay={0.15}>
-          <GlassPanel mode="dark" className="p-8 sm:p-14 !rounded-sm">
+          <GlassPanel mode="dark" className="p-6 sm:p-14 !rounded-sm">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               
               {/* Left Column */}
-              <div className="lg:col-span-8 space-y-4">
+              <div className="lg:col-span-7 space-y-4">
                 <div className="flex items-center gap-3">
                   <div className="p-3 bg-white/10 rounded-xs text-[#2DD4BF] border border-white/20">
                     <GraduationCap size={26} />
@@ -34,19 +34,19 @@ export default function Education() {
                   <span className="eyebrow-label text-[#2DD4BF]">UNDERGRADUATE DEGREE</span>
                 </div>
 
-                <h3 className="font-serif-title text-3xl sm:text-4xl font-bold text-[#FFFFFF] leading-tight">
+                <h3 className="font-serif-title text-2xl sm:text-4xl font-bold text-[#FFFFFF] leading-tight">
                   B.E. — Electronics &amp; Communication Engineering
                 </h3>
 
-                <p className="font-sans-body text-lg text-[#E2E8F0] font-medium flex items-center gap-2">
-                  <MapPin size={16} className="text-[#2DD4BF]" />
+                <p className="font-sans-body text-base sm:text-lg text-[#E2E8F0] font-medium flex items-center gap-2">
+                  <MapPin size={16} className="text-[#2DD4BF] shrink-0" />
                   Bangalore Institute of Technology, Bengaluru
                 </p>
               </div>
 
               {/* Right Column Highlights */}
-              <div className="lg:col-span-4 border-t lg:border-t-0 lg:border-l border-white/15 pt-6 lg:pt-0 lg:pl-8 space-y-4">
-                <div className="p-4 bg-white/5 border border-white/15 rounded-xs">
+              <div className="lg:col-span-5 border-t lg:border-t-0 lg:border-l border-white/15 pt-6 lg:pt-0 lg:pl-8 space-y-3">
+                <div className="p-3.5 bg-white/5 border border-white/15 rounded-xs">
                   <div className="flex items-center gap-2 text-xs font-mono text-[#2DD4BF] font-semibold mb-1">
                     <Award size={14} />
                     SPECIALISATION
@@ -56,7 +56,7 @@ export default function Education() {
                   </p>
                 </div>
 
-                <div className="p-4 bg-white/5 border border-white/15 rounded-xs">
+                <div className="p-3.5 bg-white/5 border border-white/15 rounded-xs">
                   <div className="flex items-center gap-2 text-xs font-mono text-[#2DD4BF] font-semibold mb-1">
                     ASIC TOOLING
                   </div>

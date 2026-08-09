@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Terminal as TermIcon, CornerDownLeft } from 'lucide-react';
+import { handleMailTo } from '../utils/email';
 
 const HELP_TEXT = `Available Commands:
   help           - Show this help menu
@@ -101,7 +102,7 @@ Contact: shreenidhiv17@gmail.com | github.com/shreenxdhi`,
           type: 'output',
           text: `[SUCCESS] Access Granted! Redirecting email client to shreenidhiv17@gmail.com...`,
         });
-        window.location.href = 'mailto:shreenidhiv17@gmail.com?subject=RTL%20Design%20Recruitment';
+        handleMailTo(null, 'RTL Design Recruitment');
         break;
       case 'clear':
         setHistory([]);
