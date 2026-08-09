@@ -14,67 +14,75 @@ export default function Contact() {
     setTimeout(() => setCopied(false), 2500);
   };
 
+  const handleScrollToTop = (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (typeof window !== 'undefined' && window.history.replaceState) {
+      window.history.replaceState(null, '', window.location.pathname);
+    }
+  };
+
   return (
-    <section id="contact" className="relative text-[#FFFFFF] py-24 sm:py-32 px-6 sm:px-12">
+    <section id="contact" className="relative text-[#FFFFFF] py-20 sm:py-32 px-4 sm:px-12 scroll-mt-28">
       <div className="max-w-7xl mx-auto">
 
         <SectionReveal>
-          <div className="flex items-center gap-3 mb-4">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#2DD4BF]" />
-            <p className="eyebrow-label text-[#2DD4BF]">
+          <div className="flex items-center gap-2.5 mb-3">
+            <span className="w-2 h-2 rounded-full bg-[#2DD4BF]" />
+            <p className="eyebrow-label text-[#2DD4BF] text-xs">
               05 / CONTACT
             </p>
           </div>
-          <h2 className="font-serif-title text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#FFFFFF] mb-12">
+          <h2 className="font-serif-title text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#FFFFFF] mb-8 sm:mb-12">
             Initiate <span className="italic font-normal text-[#2DD4BF]">Connection</span>
           </h2>
         </SectionReveal>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
 
           {/* Direct Links */}
           <SectionReveal delay={0.1}>
-            <GlassPanel mode="dark" className="p-8 sm:p-12 !rounded-sm flex flex-col justify-between h-full">
-              <div className="space-y-8">
+            <GlassPanel mode="dark" className="p-6 sm:p-12 !rounded-sm flex flex-col justify-between h-full">
+              <div className="space-y-6 sm:space-y-8">
                 <div>
-                  <p className="eyebrow-label text-[#2DD4BF] mb-2">GITHUB</p>
+                  <p className="eyebrow-label text-[#2DD4BF] mb-1.5 text-xs">GITHUB</p>
                   <a
                     href="https://github.com/shreenxdhi"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-serif-title text-2xl sm:text-3xl text-[#FFFFFF] editorial-link"
+                    className="font-serif-title text-lg sm:text-3xl text-[#FFFFFF] editorial-link break-all inline-flex items-center gap-1"
                   >
                     github.com/shreenxdhi
-                    <ArrowUpRight size={20} />
+                    <ArrowUpRight size={18} className="shrink-0" />
                   </a>
                 </div>
 
                 <div>
-                  <p className="eyebrow-label text-[#2DD4BF] mb-2">LINKEDIN</p>
+                  <p className="eyebrow-label text-[#2DD4BF] mb-1.5 text-xs">LINKEDIN</p>
                   <a
                     href="https://linkedin.com/in/shreenidhiv"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-serif-title text-2xl sm:text-3xl text-[#FFFFFF] editorial-link"
+                    className="font-serif-title text-lg sm:text-3xl text-[#FFFFFF] editorial-link break-all inline-flex items-center gap-1"
                   >
                     linkedin.com/in/shreenidhiv
-                    <ArrowUpRight size={20} />
+                    <ArrowUpRight size={18} className="shrink-0" />
                   </a>
                 </div>
 
                 <div>
-                  <p className="eyebrow-label text-[#2DD4BF] mb-2">EMAIL</p>
-                  <div className="flex items-center gap-4 flex-wrap">
+                  <p className="eyebrow-label text-[#2DD4BF] mb-1.5 text-xs">EMAIL</p>
+                  <div className="flex items-center gap-3 flex-wrap">
                     <a
                       href="mailto:shreenidhiv17@gmail.com"
-                      className="font-serif-title text-2xl sm:text-3xl text-[#FFFFFF] editorial-link"
+                      className="font-serif-title text-base sm:text-3xl text-[#FFFFFF] editorial-link break-all inline-flex items-center gap-1"
                     >
                       shreenidhiv17@gmail.com
-                      <ArrowUpRight size={20} />
+                      <ArrowUpRight size={18} className="shrink-0" />
                     </a>
                     <button
                       onClick={handleCopyEmail}
-                      className="px-3.5 py-2 bg-white/10 border border-white/25 rounded-xs text-xs font-mono text-[#FFFFFF] flex items-center gap-1.5 cursor-pointer hover:bg-[#FFFFFF] hover:text-[#032317] transition-all"
+                      className="px-3 py-1.5 bg-white/10 border border-white/25 rounded-xs text-xs font-mono text-[#FFFFFF] flex items-center gap-1.5 cursor-pointer hover:bg-[#FFFFFF] hover:text-[#02170f] transition-all"
                       title="Copy Email"
                     >
                       {copied ? <Check size={14} className="text-[#2DD4BF]" /> : <Copy size={14} />}
@@ -84,17 +92,17 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="pt-8 mt-12 border-t border-white/15 text-xs font-mono text-[#E2E8F0]/80">
-                Bengaluru, India · Open for Frontend VLSI Roles
+              <div className="pt-6 mt-8 sm:mt-12 border-t border-white/15 text-xs font-mono text-[#CBD5E1]">
+                Bengaluru, India · Open for Hardware &amp; RTL Roles
               </div>
             </GlassPanel>
           </SectionReveal>
 
           {/* Contact Form */}
           <SectionReveal delay={0.2}>
-            <GlassPanel mode="dark" className="p-8 sm:p-12 !rounded-sm">
+            <GlassPanel mode="dark" className="p-6 sm:p-12 !rounded-sm">
               <form
-                className="flex flex-col gap-6"
+                className="flex flex-col gap-5"
                 onSubmit={(e) => {
                   e.preventDefault();
                   const fd = new FormData(e.target);
@@ -105,8 +113,8 @@ export default function Contact() {
                   window.location.href = `mailto:shreenidhiv17@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`From: ${name} (${email})\n\n${message}`)}`;
                 }}
               >
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="cf-name" className="eyebrow-label text-[#E2E8F0]">NAME</label>
+                <div className="flex flex-col gap-1.5">
+                  <label htmlFor="cf-name" className="eyebrow-label text-[#E2E8F0] text-xs">NAME</label>
                   <input
                     id="cf-name"
                     name="name"
@@ -114,12 +122,12 @@ export default function Contact() {
                     required
                     placeholder="Your Name"
                     autoComplete="name"
-                    className="w-full px-4 py-3.5 bg-white/10 border border-white/20 rounded-xs text-sm text-[#FFFFFF] placeholder:text-[#CBD5E1]/60 outline-none transition-colors focus:border-[#2DD4BF] focus:bg-white/15"
+                    className="w-full px-3.5 py-3 bg-white/10 border border-white/20 rounded-xs text-xs sm:text-sm text-[#FFFFFF] placeholder:text-[#CBD5E1]/60 outline-none transition-colors focus:border-[#2DD4BF] focus:bg-white/15"
                   />
                 </div>
 
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="cf-email" className="eyebrow-label text-[#E2E8F0]">EMAIL</label>
+                <div className="flex flex-col gap-1.5">
+                  <label htmlFor="cf-email" className="eyebrow-label text-[#E2E8F0] text-xs">EMAIL</label>
                   <input
                     id="cf-email"
                     name="email"
@@ -127,34 +135,34 @@ export default function Contact() {
                     required
                     placeholder="your@email.com"
                     autoComplete="email"
-                    className="w-full px-4 py-3.5 bg-white/10 border border-white/20 rounded-xs text-sm text-[#FFFFFF] placeholder:text-[#CBD5E1]/60 outline-none transition-colors focus:border-[#2DD4BF] focus:bg-white/15"
+                    className="w-full px-3.5 py-3 bg-white/10 border border-white/20 rounded-xs text-xs sm:text-sm text-[#FFFFFF] placeholder:text-[#CBD5E1]/60 outline-none transition-colors focus:border-[#2DD4BF] focus:bg-white/15"
                   />
                 </div>
 
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="cf-subject" className="eyebrow-label text-[#E2E8F0]">SUBJECT</label>
+                <div className="flex flex-col gap-1.5">
+                  <label htmlFor="cf-subject" className="eyebrow-label text-[#E2E8F0] text-xs">SUBJECT</label>
                   <input
                     id="cf-subject"
                     name="subject"
                     type="text"
                     placeholder="RTL Design / Collaboration..."
-                    className="w-full px-4 py-3.5 bg-white/10 border border-white/20 rounded-xs text-sm text-[#FFFFFF] placeholder:text-[#CBD5E1]/60 outline-none transition-colors focus:border-[#2DD4BF] focus:bg-white/15"
+                    className="w-full px-3.5 py-3 bg-white/10 border border-white/20 rounded-xs text-xs sm:text-sm text-[#FFFFFF] placeholder:text-[#CBD5E1]/60 outline-none transition-colors focus:border-[#2DD4BF] focus:bg-white/15"
                   />
                 </div>
 
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="cf-message" className="eyebrow-label text-[#E2E8F0]">MESSAGE</label>
+                <div className="flex flex-col gap-1.5">
+                  <label htmlFor="cf-message" className="eyebrow-label text-[#E2E8F0] text-xs">MESSAGE</label>
                   <textarea
                     id="cf-message"
                     name="message"
                     required
                     placeholder="Your message details..."
                     rows={4}
-                    className="w-full px-4 py-3.5 bg-white/10 border border-white/20 rounded-xs text-sm text-[#FFFFFF] placeholder:text-[#CBD5E1]/60 outline-none transition-colors resize-y min-h-[100px] focus:border-[#2DD4BF] focus:bg-white/15"
+                    className="w-full px-3.5 py-3 bg-white/10 border border-white/20 rounded-xs text-xs sm:text-sm text-[#FFFFFF] placeholder:text-[#CBD5E1]/60 outline-none transition-colors resize-y min-h-[90px] focus:border-[#2DD4BF] focus:bg-white/15"
                   />
                 </div>
 
-                <button type="submit" className="btn-editorial-dark w-full justify-center mt-2">
+                <button type="submit" className="btn-editorial-dark w-full justify-center mt-2 text-xs sm:text-sm">
                   Send Message
                   <ArrowUpRight size={16} />
                 </button>
@@ -165,9 +173,11 @@ export default function Contact() {
         </div>
 
         {/* Footer Bar */}
-        <div className="mt-24 pt-8 border-t border-white/15 flex items-center justify-between flex-wrap gap-4 text-xs font-mono text-[#E2E8F0]/70">
+        <div className="mt-16 pt-6 border-t border-white/15 flex items-center justify-between flex-wrap gap-4 text-xs font-mono text-[#CBD5E1]">
           <p>© Shreenidhi V — RTL Design &amp; Verification</p>
-          <a href="#hero" className="text-[#FFFFFF] no-underline hover:text-[#2DD4BF] transition-colors">Back to top ↑</a>
+          <button onClick={handleScrollToTop} className="text-[#FFFFFF] no-underline hover:text-[#2DD4BF] transition-colors border-none bg-transparent cursor-pointer">
+            Back to top ↑
+          </button>
         </div>
 
       </div>

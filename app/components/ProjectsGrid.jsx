@@ -58,7 +58,7 @@ const projects = [
 
 export default function ProjectsGrid() {
   return (
-    <section id="projects" className="relative text-[#FFFFFF] py-24 sm:py-32 px-6 sm:px-12 border-b border-white/15">
+    <section id="projects" className="relative text-[#FFFFFF] py-20 sm:py-32 px-4 sm:px-12 border-b border-white/15 scroll-mt-28">
       <div className="max-w-7xl mx-auto">
 
         <SectionReveal>

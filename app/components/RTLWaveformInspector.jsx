@@ -199,7 +199,7 @@ export default function RTLWaveformInspector() {
   }, [isPlaying]);
 
   return (
-    <section id="rtl-inspector" className="relative bg-[#02170f] text-[#FFFFFF] py-20 px-6 sm:px-12 border-b border-white/15">
+    <section id="rtl-inspector" className="relative bg-transparent text-[#FFFFFF] py-20 sm:py-32 px-4 sm:px-12 border-b border-white/15 scroll-mt-28">
       <div className="max-w-7xl mx-auto">
 
         {/* Section Header */}
