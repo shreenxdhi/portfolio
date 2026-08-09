@@ -24,7 +24,7 @@ export default function Hero() {
             <SectionReveal delay={0.1}>
               <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 bg-white/10 border border-white/20 rounded-xs mb-8">
                 <span className="w-2 h-2 rounded-full bg-[#2DD4BF] animate-pulse" />
-                <span className="eyebrow-label text-[#FFFFFF]">RTL DESIGN &amp; VERIFICATION ENGINEER</span>
+                <span className="eyebrow-label text-[#FFFFFF]">ELECTRONICS &amp; COMMUNICATION ENGINEERING</span>
               </div>
             </SectionReveal>
 

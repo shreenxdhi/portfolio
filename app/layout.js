@@ -36,7 +36,7 @@ export const metadata = {
     'ASIC',
     'OpenROAD',
     'Yosys',
-    'VLSI Engineer',
+    'VLSI Design',
   ],
   authors: [{ name: 'Shreenidhi V', url: 'https://github.com/shreenxdhi' }],
   creator: 'Shreenidhi V',

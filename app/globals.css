@@ -283,3 +283,33 @@ nextjs-portal,
   pointer-events: none !important;
 }
 
+/* ============================================================
+   MOBILE ULTRA-FLUID PERFORMANCE OPTIMIZATIONS (60-120 FPS)
+============================================================ */
+@media (max-width: 768px) {
+  /* Reduce heavy blur orbs on mobile GPU */
+  .ambient-orb {
+    filter: blur(40px) !important;
+    opacity: 0.2 !important;
+    animation: none !important;
+  }
+
+  .orb-1, .orb-2, .orb-3 {
+    width: 280px !important;
+    height: 280px !important;
+  }
+
+  /* Lightweight backdrop-filter on mobile */
+  .glass-panel-dark {
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    transform: translate3d(0, 0, 0);
+  }
+
+  /* Enable smooth touch momentum */
+  html, body {
+    -webkit-overflow-scrolling: touch;
+    touch-action: manipulation;
+  }
+}
+
