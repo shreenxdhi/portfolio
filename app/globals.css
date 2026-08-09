@@ -21,12 +21,11 @@
   --glass-bg-hover: rgba(255, 255, 255, 0.12);
   --glass-border: rgba(255, 255, 255, 0.18);
   --glass-border-hover: rgba(45, 212, 191, 0.45);
-  --glass-blur: 24px;
-
   /* Typography */
-  --font-serif: var(--font-serif), 'Playfair Display', Georgia, serif;
-  --font-sans: var(--font-sans), 'Inter', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-display: var(--font-display), 'Outfit', system-ui, sans-serif;
+  --font-sans: var(--font-sans), 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono: var(--font-mono), 'JetBrains Mono', monospace;
+  --glass-blur: 12px;
 }
 
 @theme inline {
@@ -79,7 +78,7 @@ body.theme-tokyo {
 
 /* Typography Utility Classes */
 .font-serif-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   letter-spacing: -0.02em;
   color: var(--text-heading);
 }
@@ -239,10 +238,11 @@ body.theme-tokyo {
 .ambient-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(120px);
+  filter: blur(50px);
   pointer-events: none;
-  opacity: 0.5;
+  opacity: 0.35;
   will-change: transform;
+  transform: translate3d(0, 0, 0);
 }
 
 .orb-1 {

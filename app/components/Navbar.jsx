@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import GlassPanel from './GlassPanel';
-import { Command, ChevronDown, Globe, Palette, Terminal as TermIcon, X } from 'lucide-react';
+import { Command, ChevronDown, Globe, Palette, Terminal as TermIcon, X, Clock } from 'lucide-react';
 
 const timezones = [
   { label: 'IST', tz: 'Asia/Kolkata', name: 'Bengaluru (IST)' },
@@ -23,12 +23,15 @@ export default function Navbar({ onOpenPalette, onOpenTerminal, activeTheme, onS
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [timeString, setTimeString] = useState('');
+  const [mobileTimeString, setMobileTimeString] = useState('');
   const [selectedTz, setSelectedTz] = useState(timezones[0]);
   const [tzDropdownOpen, setTzDropdownOpen] = useState(false);
+  const [mobileTzOpen, setMobileTzOpen] = useState(false);
   const [themeDropdownOpen, setThemeDropdownOpen] = useState(false);
   const [mobileThemeOpen, setMobileThemeOpen] = useState(false);
   const [isMac, setIsMac] = useState(true);
   const tzRef = useRef(null);
+  const mobileTzRef = useRef(null);
   const themeRef = useRef(null);
   const mobileThemeRef = useRef(null);
 
@@ -58,14 +61,21 @@ export default function Navbar({ onOpenPalette, onOpenTerminal, activeTheme, onS
       if (tzToUse === 'LOCAL') {
         tzToUse = Intl.DateTimeFormat().resolvedOptions().timeZone;
       }
-      const options = {
+      const optionsFull = {
         timeZone: tzToUse,
         hour12: false,
         hour: '2-digit',
         minute: '2-digit',
         second: '2-digit',
       };
-      setTimeString(now.toLocaleTimeString('en-US', options));
+      const optionsCompact = {
+        timeZone: tzToUse,
+        hour12: false,
+        hour: '2-digit',
+        minute: '2-digit',
+      };
+      setTimeString(now.toLocaleTimeString('en-US', optionsFull));
+      setMobileTimeString(now.toLocaleTimeString('en-US', optionsCompact));
     };
     updateTime();
     const interval = setInterval(updateTime, 1000);
@@ -76,6 +86,7 @@ export default function Navbar({ onOpenPalette, onOpenTerminal, activeTheme, onS
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (tzRef.current && !tzRef.current.contains(e.target)) setTzDropdownOpen(false);
+      if (mobileTzRef.current && !mobileTzRef.current.contains(e.target)) setMobileTzOpen(false);
       if (themeRef.current && !themeRef.current.contains(e.target)) setThemeDropdownOpen(false);
       if (mobileThemeRef.current && !mobileThemeRef.current.contains(e.target)) setMobileThemeOpen(false);
     };
@@ -269,20 +280,56 @@ export default function Navbar({ onOpenPalette, onOpenTerminal, activeTheme, onS
           </nav>
 
           {/* Mobile Actions Header Bar (< 768px) */}
-          <div className="md:hidden flex items-center gap-2">
+          <div className="md:hidden flex items-center gap-1.5">
             
+            {/* Mobile Clock Pill & Timezone Selector */}
+            <div className="relative" ref={mobileTzRef}>
+              <button
+                onClick={() => setMobileTzOpen(!mobileTzOpen)}
+                className="flex items-center gap-1 px-2 py-1 rounded bg-white/5 border border-white/15 text-[#2DD4BF] font-mono text-[0.68rem] font-bold cursor-pointer"
+                title="Change Timezone"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-[#2DD4BF] animate-pulse" />
+                <span>{selectedTz.label} {mobileTimeString || '16:27'}</span>
+              </button>
+
+              {mobileTzOpen && (
+                <div className="absolute top-full right-0 mt-2 w-48 bg-[#02170f] border border-white/20 rounded shadow-2xl py-1 z-50 text-xs font-mono">
+                  <div className="px-3 py-1.5 text-[0.65rem] text-[#94A3B8] uppercase border-b border-white/10 flex items-center gap-1.5">
+                    <Globe size={11} className="text-[#2DD4BF]" />
+                    <span>Global Timezone</span>
+                  </div>
+                  {timezones.map((tz) => (
+                    <button
+                      key={tz.label}
+                      onClick={() => {
+                        setSelectedTz(tz);
+                        setMobileTzOpen(false);
+                      }}
+                      className={`w-full text-left px-3 py-2 flex items-center justify-between hover:bg-white/10 transition-colors cursor-pointer border-none bg-transparent ${
+                        selectedTz.label === tz.label ? 'text-[#2DD4BF] font-bold bg-white/5' : 'text-[#E2E8F0]'
+                      }`}
+                    >
+                      <span>{tz.name}</span>
+                      <span className="text-[0.65rem] opacity-70">{tz.label}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
             {/* Mobile Theme Palette Selector */}
             <div className="relative" ref={mobileThemeRef}>
               <button
                 onClick={() => setMobileThemeOpen(!mobileThemeOpen)}
-                className="p-2 bg-white/10 rounded border border-white/20 text-[#2DD4BF] flex items-center justify-center cursor-pointer"
+                className="p-1.5 bg-white/10 rounded border border-white/20 text-[#2DD4BF] flex items-center justify-center cursor-pointer"
                 aria-label="Switch Theme Palette"
               >
-                <Palette size={15} />
+                <Palette size={14} />
               </button>
 
               {mobileThemeOpen && (
-                <div className="absolute top-full right-0 mt-2 w-48 bg-[#02170f] border border-white/20 rounded shadow-2xl py-1 z-50 text-xs font-mono">
+                <div className="absolute top-full right-0 mt-2 w-44 bg-[#02170f] border border-white/20 rounded shadow-2xl py-1 z-50 text-xs font-mono">
                   <div className="px-3 py-1.5 text-[0.65rem] text-[#94A3B8] uppercase border-b border-white/10 flex items-center gap-1.5">
                     <Palette size={11} className="text-[#2DD4BF]" />
                     <span>Select Theme</span>
@@ -294,12 +341,12 @@ export default function Navbar({ onOpenPalette, onOpenTerminal, activeTheme, onS
                         onSelectTheme?.(t.id);
                         setMobileThemeOpen(false);
                       }}
-                      className={`w-full text-left px-3 py-2.5 flex items-center justify-between hover:bg-white/10 transition-colors cursor-pointer border-none bg-transparent ${
+                      className={`w-full text-left px-3 py-2 flex items-center justify-between hover:bg-white/10 transition-colors cursor-pointer border-none bg-transparent ${
                         activeTheme === t.id ? 'text-[#2DD4BF] font-bold bg-white/5' : 'text-[#E2E8F0]'
                       }`}
                     >
                       <div className="flex items-center gap-2">
-                        <span className="w-2.5 h-2.5 rounded-full inline-block" style={{ backgroundColor: t.color }} />
+                        <span className="w-2 h-2 rounded-full inline-block" style={{ backgroundColor: t.color }} />
                         <span>{t.name}</span>
                       </div>
                     </button>
@@ -311,15 +358,15 @@ export default function Navbar({ onOpenPalette, onOpenTerminal, activeTheme, onS
             {/* Mobile Terminal Button */}
             <button
               onClick={onOpenTerminal}
-              className="p-2 bg-white/10 rounded border border-white/20 text-[#2DD4BF] flex items-center justify-center cursor-pointer"
+              className="p-1.5 bg-white/10 rounded border border-white/20 text-[#2DD4BF] flex items-center justify-center cursor-pointer"
               aria-label="Open Terminal Shell"
             >
-              <TermIcon size={15} />
+              <TermIcon size={14} />
             </button>
 
             {/* Hamburger / Menu Toggle */}
             <button
-              className="p-2 bg-transparent border-none cursor-pointer text-[#FFFFFF] flex items-center justify-center"
+              className="p-1.5 bg-transparent border-none cursor-pointer text-[#FFFFFF] flex items-center justify-center"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle Navigation"
             >
@@ -334,15 +381,20 @@ export default function Navbar({ onOpenPalette, onOpenTerminal, activeTheme, onS
         </GlassPanel>
       </header>
 
-      {/* Mobile Menu Fullscreen Overlay with Explicit Close Button & Theme Switcher */}
+      {/* Mobile Menu Fullscreen Overlay with Explicit Close Button & Clock */}
       {mobileOpen && (
         <div className="fixed inset-0 z-50 bg-[#02170f]/98 backdrop-blur-2xl flex flex-col justify-between p-6 sm:p-8">
           
           {/* Mobile Overlay Top Header with Close Button */}
           <div className="flex items-center justify-between border-b border-white/15 pb-4">
-            <span className="font-sans text-lg font-light text-[#FFFFFF]">
-              shreenidhi<span className="text-[#2DD4BF] font-semibold">.</span>
-            </span>
+            <div className="flex items-center gap-2">
+              <span className="font-sans text-lg font-light text-[#FFFFFF]">
+                shreenidhi<span className="text-[#2DD4BF] font-semibold">.</span>
+              </span>
+              <span className="font-mono text-xs text-[#2DD4BF] font-bold px-2 py-0.5 bg-white/5 border border-white/15 rounded">
+                {selectedTz.label} {mobileTimeString}
+              </span>
+            </div>
             
             <button
               onClick={closeMobile}

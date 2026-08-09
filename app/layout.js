@@ -1,21 +1,28 @@
-import { Playfair_Display, Inter } from 'next/font/google';
+import { Plus_Jakarta_Sans, Outfit, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 
-const playfair = Playfair_Display({
-  variable: '--font-serif',
-  subsets: ['latin'],
-  display: 'swap',
-  weight: ['400', '500', '600', '700', '800', '900'],
-});
-
-const inter = Inter({
+const jakarta = Plus_Jakarta_Sans({
   variable: '--font-sans',
   subsets: ['latin'],
   display: 'swap',
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['300', '400', '500', '600', '700', '800'],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://shreenidhiv.com';
+const outfit = Outfit({
+  variable: '--font-display',
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ['400', '500', '600', '700', '800'],
+});
+
+const mono = JetBrains_Mono({
+  variable: '--font-mono',
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ['400', '500', '600', '700'],
+});
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://shreenidhi.tech';
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
@@ -78,9 +85,9 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${inter.variable} antialiased`}
+      className={`${jakarta.variable} ${outfit.variable} ${mono.variable} antialiased`}
     >
-      <body className="min-h-screen bg-[#032317] text-[#FFFFFF] selection:bg-[#2DD4BF] selection:text-[#032317]">
+      <body className="min-h-screen bg-[#02170f] text-[#FFFFFF] selection:bg-[#2DD4BF] selection:text-[#02170f]">
         {children}
       </body>
     </html>
