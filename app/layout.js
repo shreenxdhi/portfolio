@@ -73,12 +73,13 @@ export const metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.png?v=2', type: 'image/png' },
-      { url: '/transparent-favicon.png?v=2', type: 'image/png' },
-      { url: '/favicon.ico?v=2' },
+      { url: '/favicon.ico' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon.png', type: 'image/png' },
     ],
-    shortcut: '/favicon.png?v=2',
-    apple: [{ url: '/apple-touch-icon.png?v=2', type: 'image/png' }],
+    shortcut: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
   },
 };
 
