@@ -73,11 +73,12 @@ export const metadata = {
   },
   icons: {
     icon: [
-      { url: '/transparent-favicon.png', type: 'image/png' },
-      { url: '/favicon.png', type: 'image/png' },
+      { url: '/favicon.png?v=2', type: 'image/png' },
+      { url: '/transparent-favicon.png?v=2', type: 'image/png' },
+      { url: '/favicon.ico?v=2' },
     ],
-    shortcut: '/transparent-favicon.png',
-    apple: [{ url: '/transparent-favicon.png', type: 'image/png' }],
+    shortcut: '/favicon.png?v=2',
+    apple: [{ url: '/apple-touch-icon.png?v=2', type: 'image/png' }],
   },
 };
 
