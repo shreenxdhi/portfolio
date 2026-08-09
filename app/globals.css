@@ -46,10 +46,35 @@ html {
 body {
   font-family: var(--font-sans);
   overflow-x: hidden;
-  background: var(--color-bottega-dark);
+  background-color: var(--site-bg, #02170f);
   color: var(--text-heading);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.5s ease;
+}
+
+body.theme-bottega {
+  --site-bg: #02170f;
+  --theme-accent: #2DD4BF;
+  background-color: #02170f !important;
+}
+
+body.theme-cyber {
+  --site-bg: #051821;
+  --theme-accent: #38BDF8;
+  background-color: #051821 !important;
+}
+
+body.theme-champagne {
+  --site-bg: #14100b;
+  --theme-accent: #F59E0B;
+  background-color: #14100b !important;
+}
+
+body.theme-tokyo {
+  --site-bg: #0f121d;
+  --theme-accent: #A855F7;
+  background-color: #0f121d !important;
 }
 
 /* Typography Utility Classes */

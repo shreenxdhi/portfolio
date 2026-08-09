@@ -69,7 +69,7 @@ export default function ProjectsGrid() {
             </p>
           </div>
           <h2 className="font-serif-title text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#FFFFFF] mb-12">
-            RTL Architecture &amp; <span className="italic font-normal text-[#2DD4BF]">Silicon Builds</span>
+            Featured Projects &amp; <span className="italic font-normal text-[#2DD4BF]">Architectures</span>
           </h2>
         </SectionReveal>
 
