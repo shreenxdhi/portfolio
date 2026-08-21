@@ -137,8 +137,8 @@ Contact: shreenidhiv17@gmail.com | github.com/shreenxdhi`,
         />
 
         <motion.div
-          className={`relative w-full max-w-3xl h-[480px] bg-[#02170f] border border-white/20 rounded-md shadow-2xl overflow-hidden flex flex-col font-mono z-10 ${
-            isMatrix ? 'text-[#00FF66] border-[#00FF66]/50' : 'text-[#2DD4BF]'
+          className={`relative w-full max-w-3xl h-[480px] bg-[#0A0E2A] border border-white/20 rounded-md shadow-2xl overflow-hidden flex flex-col font-mono z-10 ${
+            isMatrix ? 'text-[#00FF66] border-[#00FF66]/50' : 'text-[#5B8DEF]'
           }`}
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -147,7 +147,7 @@ Contact: shreenidhiv17@gmail.com | github.com/shreenxdhi`,
           {/* Header */}
           <div className="flex items-center justify-between px-4 py-2.5 bg-black/70 border-b border-white/15 text-xs text-[#CBD5E1]">
             <div className="flex items-center gap-2">
-              <TermIcon size={14} className="text-[#2DD4BF]" />
+              <TermIcon size={14} className="text-[#5B8DEF]" />
               <span className="font-bold text-[#FFFFFF]">shreenidhi@rtl-node:~</span>
             </div>
             <div className="flex items-center gap-3">
@@ -176,7 +176,7 @@ Contact: shreenidhiv17@gmail.com | github.com/shreenxdhi`,
             }}
             className="flex items-center gap-2 p-3 bg-black/80 border-t border-white/15 text-xs"
           >
-            <span className="text-[#2DD4BF] font-bold">shreenidhi@rtl-node:~$</span>
+            <span className="text-[#5B8DEF] font-bold">shreenidhi@rtl-node:~$</span>
             <input
               type="text"
               autoFocus
@@ -185,7 +185,7 @@ Contact: shreenidhiv17@gmail.com | github.com/shreenxdhi`,
               placeholder="type help, cat resume, sudo hire..."
               className="flex-1 bg-transparent text-[#FFFFFF] outline-none font-mono"
             />
-            <button type="submit" className="text-[#2DD4BF] bg-transparent border-none cursor-pointer">
+            <button type="submit" className="text-[#5B8DEF] bg-transparent border-none cursor-pointer">
               <CornerDownLeft size={14} />
             </button>
           </form>

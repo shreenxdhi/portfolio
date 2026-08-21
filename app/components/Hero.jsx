@@ -45,12 +45,12 @@ export default function Hero() {
           <div>
             <SectionReveal delay={0.1}>
               <h1 className="font-serif-title text-4xl sm:text-7xl lg:text-8xl font-bold tracking-tight text-[#FFFFFF] mb-4 sm:mb-6 leading-[1.05]">
-                Shreenidhi <span className="text-[#2DD4BF]">V</span>
+                Shreenidhi <span className="text-[#5B8DEF]">V</span>
               </h1>
             </SectionReveal>
 
             <SectionReveal delay={0.2}>
-              <p className="font-mono text-[#2DD4BF] text-xs sm:text-base mb-6 font-semibold tracking-wide">
+              <p className="font-mono text-[#5B8DEF] text-xs sm:text-base mb-6 font-semibold tracking-wide">
                 RTL Design &amp; Verification | Digital IC Design | FPGA → ASIC
               </p>
             </SectionReveal>
@@ -81,7 +81,7 @@ export default function Hero() {
         <span className="tracking-widest hidden sm:inline">VLSI ARCHITECTURE &amp; DIGITAL IC DESIGN</span>
         <button
           onClick={(e) => handleScrollTo(e, '#about')}
-          className="flex items-center gap-1.5 text-[#FFFFFF] hover:text-[#2DD4BF] transition-colors font-semibold border-none bg-transparent cursor-pointer ml-auto sm:ml-0"
+          className="flex items-center gap-1.5 text-[#FFFFFF] hover:text-[#5B8DEF] transition-colors font-semibold border-none bg-transparent cursor-pointer ml-auto sm:ml-0"
         >
           SCROLL <ArrowDown size={14} />
         </button>

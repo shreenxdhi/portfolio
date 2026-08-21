@@ -207,11 +207,11 @@ export default function RTLWaveformInspector() {
           <div className="flex items-center justify-between flex-wrap gap-4 mb-8">
             <div>
               <div className="flex items-center gap-3 mb-2">
-                <Cpu size={18} className="text-[#2DD4BF]" />
-                <p className="eyebrow-label text-[#2DD4BF]">CREATIVE LIVE HDL SIMULATOR</p>
+                <Cpu size={18} className="text-[#5B8DEF]" />
+                <p className="eyebrow-label text-[#5B8DEF]">CREATIVE LIVE HDL SIMULATOR</p>
               </div>
               <h2 className="font-serif-title text-3xl sm:text-4xl font-bold text-[#FFFFFF]">
-                Creative RTL &amp; <span className="italic font-normal text-[#2DD4BF]">Live Waveform Simulator</span>
+                Creative RTL &amp; <span className="italic font-normal text-[#5B8DEF]">Live Waveform Simulator</span>
               </h2>
             </div>
 
@@ -219,7 +219,7 @@ export default function RTLWaveformInspector() {
             <div className="flex items-center gap-3">
               <button
                 onClick={() => setIsPlaying(!isPlaying)}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/20 rounded-xs text-xs font-mono text-[#FFFFFF] hover:bg-[#2DD4BF] hover:text-[#02170f] transition-all cursor-pointer"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/20 rounded-xs text-xs font-mono text-[#FFFFFF] hover:bg-[#5B8DEF] hover:text-[#0A0E2A] transition-all cursor-pointer"
               >
                 {isPlaying ? <Pause size={14} /> : <Play size={14} />}
                 {isPlaying ? 'PAUSE SIM' : 'PLAY SIM'}
@@ -246,7 +246,7 @@ export default function RTLWaveformInspector() {
               }}
               className={`flex items-center gap-2.5 px-4 py-2.5 rounded-xs font-mono text-xs whitespace-nowrap transition-all cursor-pointer border ${
                 selectedModule.id === mod.id
-                  ? 'bg-[#2DD4BF] text-[#02170f] font-bold border-[#2DD4BF] shadow-lg'
+                  ? 'bg-[#5B8DEF] text-[#0A0E2A] font-bold border-[#5B8DEF] shadow-lg'
                   : 'bg-white/5 text-[#E2E8F0] border-white/15 hover:bg-white/10'
               }`}
             >
@@ -267,7 +267,7 @@ export default function RTLWaveformInspector() {
             <GlassPanel mode="dark" className="p-6 !rounded-sm flex-1 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between gap-4 mb-4 pb-3 border-b border-white/15">
-                  <div className="flex items-center gap-2 font-mono text-xs text-[#2DD4BF]">
+                  <div className="flex items-center gap-2 font-mono text-xs text-[#5B8DEF]">
                     <Code size={16} />
                     <span>{selectedModule.filename}</span>
                   </div>
@@ -277,7 +277,7 @@ export default function RTLWaveformInspector() {
                 <h3 className="font-serif-title text-xl font-bold text-[#FFFFFF] mb-2">
                   {selectedModule.title}
                 </h3>
-                <p className="text-xs font-mono text-[#2DD4BF] mb-4">
+                <p className="text-xs font-mono text-[#5B8DEF] mb-4">
                   {selectedModule.specs}
                 </p>
                 <p className="text-xs text-[#E2E8F0] leading-relaxed mb-6">
@@ -290,7 +290,7 @@ export default function RTLWaveformInspector() {
                 </div>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-white/15 flex items-center justify-between text-xs font-mono text-[#2DD4BF]">
+              <div className="mt-6 pt-4 border-t border-white/15 flex items-center justify-between text-xs font-mono text-[#5B8DEF]">
                 <span className="flex items-center gap-1.5">
                   <CheckCircle2 size={14} />
                   Assertions: 100% Passed
@@ -305,13 +305,13 @@ export default function RTLWaveformInspector() {
             <GlassPanel mode="dark" className="p-6 !rounded-sm flex-1 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between gap-4 mb-4 pb-3 border-b border-white/15">
-                  <div className="flex items-center gap-2 font-mono text-xs text-[#2DD4BF]">
+                  <div className="flex items-center gap-2 font-mono text-xs text-[#5B8DEF]">
                     <Activity size={16} />
                     <span>Signal Waveform Trace</span>
                   </div>
                   <div className="flex items-center gap-2 font-mono text-xs text-[#E2E8F0]">
                     <span>CYCLE:</span>
-                    <span className="px-2 py-0.5 bg-[#2DD4BF]/20 text-[#2DD4BF] font-bold rounded">
+                    <span className="px-2 py-0.5 bg-[#5B8DEF]/20 text-[#5B8DEF] font-bold rounded">
                       #{cycle}
                     </span>
                   </div>
@@ -332,13 +332,13 @@ export default function RTLWaveformInspector() {
                           <svg className="w-full h-5" viewBox="0 0 320 20" preserveAspectRatio="none">
                             <path
                               d="M0,15 L20,15 L20,5 L40,5 L40,15 L60,15 L60,5 L80,5 L80,15 L100,15 L100,5 L120,5 L120,15 L140,15 L140,5 L160,5 L160,15 L180,15 L180,5 L200,5 L200,15 L220,15 L220,5 L240,5 L240,15 L260,15 L260,5 L280,5 L280,15 L300,15 L300,5 L320,5"
-                              stroke="#2DD4BF"
+                              stroke="#5B8DEF"
                               strokeWidth="2"
                               fill="none"
                             />
                           </svg>
                         ) : sig.type === 'bus' ? (
-                          <div className="w-full flex items-center justify-between text-[0.7rem] text-[#2DD4BF] font-bold px-1">
+                          <div className="w-full flex items-center justify-between text-[0.7rem] text-[#5B8DEF] font-bold px-1">
                             <span>[{sig.values[cycle % sig.values.length]}]</span>
                             <span className="text-[0.65rem] text-[#CBD5E1]">BUS 0x{cycle.toString(16).toUpperCase()}</span>
                           </div>
@@ -346,7 +346,7 @@ export default function RTLWaveformInspector() {
                           <div className="w-full flex items-center">
                             <div
                               className={`h-2 rounded transition-all duration-300 ${
-                                (cycle + idx) % 3 === 0 ? 'w-full bg-[#2DD4BF]' : 'w-1/4 bg-[#2DD4BF]/40'
+                                (cycle + idx) % 3 === 0 ? 'w-full bg-[#5B8DEF]' : 'w-1/4 bg-[#5B8DEF]/40'
                               }`}
                             />
                           </div>
@@ -360,7 +360,7 @@ export default function RTLWaveformInspector() {
               {/* Status Bar */}
               <div className="mt-6 pt-4 border-t border-white/15 flex items-center justify-between text-xs font-mono text-[#CBD5E1]">
                 <span>TIMING: CLOSED (+0.87ns)</span>
-                <span className="text-[#2DD4BF] font-semibold">SIMULATION ACTIVE</span>
+                <span className="text-[#5B8DEF] font-semibold">SIMULATION ACTIVE</span>
               </div>
             </GlassPanel>
           </div>

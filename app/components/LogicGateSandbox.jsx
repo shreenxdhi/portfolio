@@ -26,11 +26,11 @@ export default function LogicGateSandbox() {
       <div className="max-w-7xl mx-auto">
         <SectionReveal>
           <div className="flex items-center gap-3 mb-2">
-            <Zap size={18} className="text-[#2DD4BF]" />
-            <p className="eyebrow-label text-[#2DD4BF]">INTERACTIVE CIRCUIT BUILDER</p>
+            <Zap size={18} className="text-[#5B8DEF]" />
+            <p className="eyebrow-label text-[#5B8DEF]">INTERACTIVE CIRCUIT BUILDER</p>
           </div>
           <h2 className="font-serif-title text-3xl sm:text-4xl font-bold text-[#FFFFFF] mb-8">
-            Digital Logic Gate <span className="italic font-normal text-[#2DD4BF]">Sandbox</span>
+            Digital Logic Gate <span className="italic font-normal text-[#5B8DEF]">Sandbox</span>
           </h2>
         </SectionReveal>
 
@@ -42,7 +42,7 @@ export default function LogicGateSandbox() {
               onClick={() => setSelectedGate(g)}
               className={`px-4 py-2 rounded-xs font-mono text-xs font-bold transition-all cursor-pointer border ${
                 selectedGate.id === g.id
-                  ? 'bg-[#2DD4BF] text-[#02170f] border-[#2DD4BF] shadow-lg'
+                  ? 'bg-[#5B8DEF] text-[#0A0E2A] border-[#5B8DEF] shadow-lg'
                   : 'bg-white/5 text-[#E2E8F0] border-white/15 hover:bg-white/10'
               }`}
             >
@@ -57,7 +57,7 @@ export default function LogicGateSandbox() {
             <GlassPanel mode="dark" className="p-6 sm:p-8 !rounded-sm flex-1 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between pb-4 mb-6 border-b border-white/15">
-                  <span className="font-mono text-xs text-[#2DD4BF] font-bold">LOGIC CIRCUIT DIAGRAM</span>
+                  <span className="font-mono text-xs text-[#5B8DEF] font-bold">LOGIC CIRCUIT DIAGRAM</span>
                   <span className="font-mono text-xs text-[#CBD5E1]">{selectedGate.name}</span>
                 </div>
 
@@ -69,18 +69,18 @@ export default function LogicGateSandbox() {
                     <button
                       onClick={() => setInputA(inputA === 1 ? 0 : 1)}
                       className={`w-16 h-10 rounded-full flex items-center p-1 cursor-pointer transition-colors border ${
-                        inputA === 1 ? 'bg-[#2DD4BF] border-[#2DD4BF]' : 'bg-black/60 border-white/20'
+                        inputA === 1 ? 'bg-[#5B8DEF] border-[#5B8DEF]' : 'bg-black/60 border-white/20'
                       }`}
                     >
                       <div
-                        className={`w-8 h-8 rounded-full bg-white font-mono text-xs font-bold flex items-center justify-center text-[#02170f] transition-transform ${
+                        className={`w-8 h-8 rounded-full bg-white font-mono text-xs font-bold flex items-center justify-center text-[#0A0E2A] transition-transform ${
                           inputA === 1 ? 'translate-x-6' : 'translate-x-0'
                         }`}
                       >
                         {inputA}
                       </div>
                     </button>
-                    <span className={`font-mono text-xs ${inputA === 1 ? 'text-[#2DD4BF]' : 'text-slate-400'}`}>
+                    <span className={`font-mono text-xs ${inputA === 1 ? 'text-[#5B8DEF]' : 'text-slate-400'}`}>
                       LOGIC {inputA}
                     </span>
                   </div>
@@ -91,18 +91,18 @@ export default function LogicGateSandbox() {
                     <button
                       onClick={() => setInputB(inputB === 1 ? 0 : 1)}
                       className={`w-16 h-10 rounded-full flex items-center p-1 cursor-pointer transition-colors border ${
-                        inputB === 1 ? 'bg-[#2DD4BF] border-[#2DD4BF]' : 'bg-black/60 border-white/20'
+                        inputB === 1 ? 'bg-[#5B8DEF] border-[#5B8DEF]' : 'bg-black/60 border-white/20'
                       }`}
                     >
                       <div
-                        className={`w-8 h-8 rounded-full bg-white font-mono text-xs font-bold flex items-center justify-center text-[#02170f] transition-transform ${
+                        className={`w-8 h-8 rounded-full bg-white font-mono text-xs font-bold flex items-center justify-center text-[#0A0E2A] transition-transform ${
                           inputB === 1 ? 'translate-x-6' : 'translate-x-0'
                         }`}
                       >
                         {inputB}
                       </div>
                     </button>
-                    <span className={`font-mono text-xs ${inputB === 1 ? 'text-[#2DD4BF]' : 'text-slate-400'}`}>
+                    <span className={`font-mono text-xs ${inputB === 1 ? 'text-[#5B8DEF]' : 'text-slate-400'}`}>
                       LOGIC {inputB}
                     </span>
                   </div>
@@ -111,11 +111,11 @@ export default function LogicGateSandbox() {
                 {/* Live Output Signal Reader */}
                 <div className="p-6 bg-black/60 rounded border border-white/15 flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <Cpu size={24} className="text-[#2DD4BF]" />
+                    <Cpu size={24} className="text-[#5B8DEF]" />
                     <div>
                       <div className="font-mono text-xs text-[#CBD5E1]">OUTPUT SIGNAL Y</div>
                       <div className="font-mono text-xl font-bold text-[#FFFFFF]">
-                        Y = {inputA} {selectedGate.id} {inputB} = <span className="text-[#2DD4BF]">{outputVal}</span>
+                        Y = {inputA} {selectedGate.id} {inputB} = <span className="text-[#5B8DEF]">{outputVal}</span>
                       </div>
                     </div>
                   </div>
@@ -125,7 +125,7 @@ export default function LogicGateSandbox() {
                     <div
                       className={`w-6 h-6 rounded-full transition-all duration-300 ${
                         outputVal === 1
-                          ? 'bg-[#2DD4BF] shadow-[0_0_15px_#2DD4BF]'
+                          ? 'bg-[#5B8DEF] shadow-[0_0_15px_#5B8DEF]'
                           : 'bg-red-500/30 border border-red-500/50'
                       }`}
                     />
@@ -136,7 +136,7 @@ export default function LogicGateSandbox() {
                 </div>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-white/15 flex items-center justify-between text-xs font-mono text-[#2DD4BF]">
+              <div className="mt-6 pt-4 border-t border-white/15 flex items-center justify-between text-xs font-mono text-[#5B8DEF]">
                 <span>Propagation Delay: &lt; 0.1ns</span>
                 <span>Synthesizable Logic</span>
               </div>
@@ -148,13 +148,13 @@ export default function LogicGateSandbox() {
             <GlassPanel mode="dark" className="p-6 sm:p-8 !rounded-sm flex-1 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between pb-4 mb-6 border-b border-white/15">
-                  <span className="font-mono text-xs text-[#2DD4BF] font-bold">TRUTH TABLE</span>
+                  <span className="font-mono text-xs text-[#5B8DEF] font-bold">TRUTH TABLE</span>
                   <span className="font-mono text-xs text-[#CBD5E1]">Active State Highlighted</span>
                 </div>
 
                 <div className="overflow-hidden rounded border border-white/15">
                   <table className="w-full text-center font-mono text-xs">
-                    <thead className="bg-white/10 text-[#2DD4BF] uppercase">
+                    <thead className="bg-white/10 text-[#5B8DEF] uppercase">
                       <tr>
                         <th className="py-2.5 px-3">Input A</th>
                         <th className="py-2.5 px-3">Input B</th>
@@ -168,7 +168,7 @@ export default function LogicGateSandbox() {
                           <tr
                             key={idx}
                             className={`transition-colors ${
-                              isActive ? 'bg-[#2DD4BF]/20 text-[#2DD4BF] font-bold' : 'text-[#E2E8F0]'
+                              isActive ? 'bg-[#5B8DEF]/20 text-[#5B8DEF] font-bold' : 'text-[#E2E8F0]'
                             }`}
                           >
                             <td className="py-3 px-3">{a}</td>
@@ -182,7 +182,7 @@ export default function LogicGateSandbox() {
                 </div>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-white/15 flex items-center gap-2 text-xs font-mono text-[#2DD4BF]">
+              <div className="mt-6 pt-4 border-t border-white/15 flex items-center gap-2 text-xs font-mono text-[#5B8DEF]">
                 <CheckCircle size={14} />
                 <span>Verification State Verified</span>
               </div>

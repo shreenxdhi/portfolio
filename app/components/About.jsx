@@ -11,13 +11,13 @@ export default function About() {
 
         <SectionReveal>
           <div className="flex items-center gap-3 mb-4">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#2DD4BF]" />
-            <p className="eyebrow-label text-[#2DD4BF]">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#5B8DEF]" />
+            <p className="eyebrow-label text-[#5B8DEF]">
               01 / ABOUT
             </p>
           </div>
           <h2 className="font-serif-title text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#FFFFFF] mb-12">
-            Hardware Acceleration &amp; <span className="italic font-normal text-[#2DD4BF]">Digital IC Design</span>
+            Hardware Acceleration &amp; <span className="italic font-normal text-[#5B8DEF]">Digital IC Design</span>
           </h2>
         </SectionReveal>
 
@@ -29,8 +29,8 @@ export default function About() {
               <div className="space-y-6 text-base sm:text-lg text-[#F1F5F9] font-medium leading-relaxed">
                 <p>
                   Currently building hardware accelerators and digital IC design flows
-                  (<span className="font-mono text-xs font-bold uppercase tracking-wider px-2.5 py-1 border border-white/25 bg-white/10 text-[#2DD4BF]">Verilog/SystemVerilog</span> →{' '}
-                  <span className="font-mono text-xs font-bold uppercase tracking-wider px-2.5 py-1 border border-white/25 bg-white/10 text-[#2DD4BF]">Sky130 GDSII</span>).
+                  (<span className="font-mono text-xs font-bold uppercase tracking-wider px-2.5 py-1 border border-white/25 bg-white/10 text-[#5B8DEF]">Verilog/SystemVerilog</span> →{' '}
+                  <span className="font-mono text-xs font-bold uppercase tracking-wider px-2.5 py-1 border border-white/25 bg-white/10 text-[#5B8DEF]">Sky130 GDSII</span>).
                 </p>
                 <p>
                   Deepening expertise in RTL-to-GDSII physical design (synthesis, floorplanning, place-and-route, STA).
@@ -41,7 +41,7 @@ export default function About() {
               </div>
 
               <div className="pt-8 mt-8 border-t border-white/15 flex items-center justify-between">
-                <span className="eyebrow-label text-[#2DD4BF]">LOCATION</span>
+                <span className="eyebrow-label text-[#5B8DEF]">LOCATION</span>
                 <span className="font-serif-title text-xl font-bold text-[#FFFFFF]">Bengaluru, India</span>
               </div>
             </GlassPanel>
@@ -51,7 +51,7 @@ export default function About() {
           <div className="lg:col-span-5 flex flex-col gap-4">
             <SectionReveal delay={0.25}>
               <GlassPanel mode="dark" className="p-6 !rounded-sm border border-white/20 flex items-start gap-4">
-                <div className="p-3 bg-white/10 text-[#2DD4BF] rounded-xs flex-shrink-0 border border-white/15">
+                <div className="p-3 bg-white/10 text-[#5B8DEF] rounded-xs flex-shrink-0 border border-white/15">
                   <Cpu size={20} />
                 </div>
                 <div>
@@ -65,7 +65,7 @@ export default function About() {
 
             <SectionReveal delay={0.35}>
               <GlassPanel mode="dark" className="p-6 !rounded-sm border border-white/20 flex items-start gap-4">
-                <div className="p-3 bg-white/10 text-[#2DD4BF] rounded-xs flex-shrink-0 border border-white/15">
+                <div className="p-3 bg-white/10 text-[#5B8DEF] rounded-xs flex-shrink-0 border border-white/15">
                   <CheckCircle2 size={20} />
                 </div>
                 <div>
@@ -79,7 +79,7 @@ export default function About() {
 
             <SectionReveal delay={0.45}>
               <GlassPanel mode="dark" className="p-6 !rounded-sm border border-white/20 flex items-start gap-4">
-                <div className="p-3 bg-white/10 text-[#2DD4BF] rounded-xs flex-shrink-0 border border-white/15">
+                <div className="p-3 bg-white/10 text-[#5B8DEF] rounded-xs flex-shrink-0 border border-white/15">
                   <Layers size={20} />
                 </div>
                 <div>

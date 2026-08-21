@@ -29,13 +29,13 @@ export default function SkillsGrid() {
 
         <SectionReveal>
           <div className="flex items-center gap-3 mb-4">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#2DD4BF]" />
-            <p className="eyebrow-label text-[#2DD4BF]">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#5B8DEF]" />
+            <p className="eyebrow-label text-[#5B8DEF]">
               02 / TECH STACK
             </p>
           </div>
           <h2 className="font-serif-title text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#FFFFFF] mb-12">
-            Tools &amp; <span className="italic font-normal text-[#2DD4BF]">Infrastructure</span>
+            Tools &amp; <span className="italic font-normal text-[#5B8DEF]">Infrastructure</span>
           </h2>
         </SectionReveal>
 
@@ -44,14 +44,14 @@ export default function SkillsGrid() {
             <SectionReveal key={group.label} delay={gi * 0.1}>
               <GlassPanel mode="dark" className="p-8 !rounded-sm h-full flex flex-col justify-between">
                 <div>
-                  <p className="eyebrow-label text-[#2DD4BF] mb-6 pb-3 border-b border-white/15">
+                  <p className="eyebrow-label text-[#5B8DEF] mb-6 pb-3 border-b border-white/15">
                     {group.label}
                   </p>
                   <div className="flex flex-wrap gap-3">
                     {group.badges.map((badge) => (
                       <span
                         key={badge}
-                        className="font-sans-body text-xs font-bold uppercase tracking-wider px-4 py-2.5 bg-white/10 border border-white/25 text-[#FFFFFF] rounded-xs shadow-sm transition-all duration-200 hover:bg-[#FFFFFF] hover:text-[#032317] hover:border-[#FFFFFF]"
+                        className="font-sans-body text-xs font-bold uppercase tracking-wider px-4 py-2.5 bg-white/10 border border-white/25 text-[#FFFFFF] rounded-xs shadow-sm transition-all duration-200 hover:bg-[#FFFFFF] hover:text-[#0A0E2A] hover:border-[#FFFFFF]"
                       >
                         {badge}
                       </span>

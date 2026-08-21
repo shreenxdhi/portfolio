@@ -36,7 +36,7 @@ export default function Home() {
 
   // Sync theme background with document body class
   useEffect(() => {
-    document.body.className = `min-h-screen theme-${theme} text-[#FFFFFF] selection:bg-[#2DD4BF] selection:text-[#032317] transition-colors duration-500`;
+    document.body.className = `min-h-screen theme-${theme} text-[#FFFFFF] selection:bg-[#5B8DEF] selection:text-[#0A0E2A] transition-colors duration-500`;
   }, [theme]);
 
   // Automatically clean # hash fragments from URL bar on load & hashchange

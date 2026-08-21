@@ -13,7 +13,7 @@ const timezones = [
 ];
 
 const themes = [
-  { id: 'bottega', name: 'Bottega Green', color: '#2DD4BF' },
+  { id: 'bottega', name: 'Cobalt Blue', color: '#5B8DEF' },
   { id: 'cyber', name: 'Cyber Cyan', color: '#38BDF8' },
   { id: 'champagne', name: 'Champagne Gold', color: '#F59E0B' },
   { id: 'tokyo', name: 'Tokyo Night', color: '#A855F7' },
@@ -142,7 +142,9 @@ export default function Navbar({ onOpenPalette, onOpenTerminal, activeTheme, onS
         <GlassPanel
           mode="dark"
           className={`max-w-7xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between !rounded-sm transition-all duration-300 ${
-            scrolled ? '!bg-[rgba(2,23,15,0.95)] shadow-xl border-white/25' : ''
+            scrolled
+              ? '!bg-[rgba(10,14,42,0.92)] shadow-2xl border-white/25'
+              : '!bg-[rgba(10,14,42,0.8)] backdrop-blur-xl border-white/20 shadow-xl'
           }`}
         >
           {/* Left: Minimalist Brand Mark */}
@@ -151,12 +153,12 @@ export default function Navbar({ onOpenPalette, onOpenTerminal, activeTheme, onS
             className="flex items-center gap-2 no-underline group border-none bg-transparent cursor-pointer p-0"
             aria-label="Home"
           >
-            <span className="font-sans text-base sm:text-lg font-light tracking-tight text-[#FFFFFF] group-hover:text-[#2DD4BF] transition-colors">
-              shreenidhi<span className="text-[#2DD4BF] font-semibold">.</span>
+            <span className="font-sans text-base sm:text-lg font-light tracking-tight text-[#FFFFFF] group-hover:text-[#5B8DEF] transition-colors">
+              shreenidhi<span className="text-[#5B8DEF] font-semibold">.</span>
             </span>
             <span className="relative flex h-2 w-2 items-center justify-center">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2DD4BF] opacity-75" />
-              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#2DD4BF]" />
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#5B8DEF] opacity-75" />
+              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#5B8DEF]" />
             </span>
           </button>
 
@@ -167,19 +169,19 @@ export default function Navbar({ onOpenPalette, onOpenTerminal, activeTheme, onS
             <div className="relative" ref={tzRef}>
               <button
                 onClick={() => setTzDropdownOpen(!tzDropdownOpen)}
-                className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-white/5 hover:bg-white/15 border border-white/15 transition-colors cursor-pointer text-[#2DD4BF] font-semibold"
+                className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-white/5 hover:bg-white/15 border border-white/15 transition-colors cursor-pointer text-[#5B8DEF] font-semibold"
                 title="Click to change timezone location"
               >
-                <span className="w-1.5 h-1.5 rounded-full bg-[#2DD4BF] animate-pulse" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#5B8DEF] animate-pulse" />
                 <span>{selectedTz.label} {timeString || '15:58:00'}</span>
                 <ChevronDown size={12} className={`transition-transform duration-200 ${tzDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
 
               {/* Timezone Dropdown */}
               {tzDropdownOpen && (
-                <div className="absolute top-full left-0 mt-2 w-48 bg-[#02170f] border border-white/20 rounded shadow-xl py-1 z-50 text-xs font-mono">
+                <div className="absolute top-full left-0 mt-2 w-48 bg-[#0A0E2A] border border-white/20 rounded shadow-xl py-1 z-50 text-xs font-mono">
                   <div className="px-3 py-1.5 text-[0.65rem] text-[#94A3B8] uppercase border-b border-white/10 flex items-center gap-1.5">
-                    <Globe size={11} className="text-[#2DD4BF]" />
+                    <Globe size={11} className="text-[#5B8DEF]" />
                     <span>Global Timezone</span>
                   </div>
                   {timezones.map((tz) => (
@@ -190,7 +192,7 @@ export default function Navbar({ onOpenPalette, onOpenTerminal, activeTheme, onS
                         setTzDropdownOpen(false);
                       }}
                       className={`w-full text-left px-3 py-2 flex items-center justify-between hover:bg-white/10 transition-colors cursor-pointer border-none bg-transparent ${
-                        selectedTz.label === tz.label ? 'text-[#2DD4BF] font-bold bg-white/5' : 'text-[#E2E8F0]'
+                        selectedTz.label === tz.label ? 'text-[#5B8DEF] font-bold bg-white/5' : 'text-[#E2E8F0]'
                       }`}
                     >
                       <span>{tz.name}</span>
@@ -208,14 +210,14 @@ export default function Navbar({ onOpenPalette, onOpenTerminal, activeTheme, onS
                 className="flex items-center gap-1.5 px-2 py-1 rounded bg-white/5 hover:bg-white/15 border border-white/15 transition-colors cursor-pointer text-[#E2E8F0]"
                 title="Switch Theme Palette"
               >
-                <Palette size={13} className="text-[#2DD4BF]" />
+                <Palette size={13} className="text-[#5B8DEF]" />
                 <ChevronDown size={11} className={`transition-transform duration-200 ${themeDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
 
               {themeDropdownOpen && (
-                <div className="absolute top-full left-0 mt-2 w-44 bg-[#02170f] border border-white/20 rounded shadow-xl py-1 z-50 text-xs font-mono">
+                <div className="absolute top-full left-0 mt-2 w-44 bg-[#0A0E2A] border border-white/20 rounded shadow-xl py-1 z-50 text-xs font-mono">
                   <div className="px-3 py-1.5 text-[0.65rem] text-[#94A3B8] uppercase border-b border-white/10 flex items-center gap-1.5">
-                    <Palette size={11} className="text-[#2DD4BF]" />
+                    <Palette size={11} className="text-[#5B8DEF]" />
                     <span>Select Theme</span>
                   </div>
                   {themes.map((t) => (
@@ -226,7 +228,7 @@ export default function Navbar({ onOpenPalette, onOpenTerminal, activeTheme, onS
                         setThemeDropdownOpen(false);
                       }}
                       className={`w-full text-left px-3 py-2 flex items-center justify-between hover:bg-white/10 transition-colors cursor-pointer border-none bg-transparent ${
-                        activeTheme === t.id ? 'text-[#2DD4BF] font-bold bg-white/5' : 'text-[#E2E8F0]'
+                        activeTheme === t.id ? 'text-[#5B8DEF] font-bold bg-white/5' : 'text-[#E2E8F0]'
                       }`}
                     >
                       <div className="flex items-center gap-2">
@@ -242,7 +244,7 @@ export default function Navbar({ onOpenPalette, onOpenTerminal, activeTheme, onS
             {/* Terminal Shell Button */}
             <button
               onClick={onOpenTerminal}
-              className="flex items-center gap-1 px-2 py-1 rounded bg-white/10 border border-white/20 hover:bg-[#2DD4BF] hover:text-[#02170f] transition-all cursor-pointer text-[0.7rem] font-bold"
+              className="flex items-center gap-1 px-2 py-1 rounded bg-white/10 border border-white/20 hover:bg-[#5B8DEF] hover:text-[#0A0E2A] transition-all cursor-pointer text-[0.7rem] font-bold"
               title="Launch Terminal Shell (~)"
             >
               <TermIcon size={12} />
@@ -252,7 +254,7 @@ export default function Navbar({ onOpenPalette, onOpenTerminal, activeTheme, onS
             {/* Command Palette Button */}
             <button
               onClick={onOpenPalette}
-              className="flex items-center gap-1 px-2.5 py-1 rounded bg-white/10 border border-white/20 hover:bg-[#2DD4BF] hover:text-[#02170f] transition-all cursor-pointer text-[0.72rem] font-bold shadow-sm"
+              className="flex items-center gap-1 px-2.5 py-1 rounded bg-white/10 border border-white/20 hover:bg-[#5B8DEF] hover:text-[#0A0E2A] transition-all cursor-pointer text-[0.72rem] font-bold shadow-sm"
               title="Open Command Palette (Cmd + K / Ctrl + K)"
             >
               {isMac ? (
@@ -286,17 +288,17 @@ export default function Navbar({ onOpenPalette, onOpenTerminal, activeTheme, onS
             <div className="relative" ref={mobileTzRef}>
               <button
                 onClick={() => setMobileTzOpen(!mobileTzOpen)}
-                className="flex items-center gap-1 px-2 py-1 rounded bg-white/5 border border-white/15 text-[#2DD4BF] font-mono text-[0.68rem] font-bold cursor-pointer"
+                className="flex items-center gap-1 px-2 py-1 rounded bg-white/5 border border-white/15 text-[#5B8DEF] font-mono text-[0.68rem] font-bold cursor-pointer"
                 title="Change Timezone"
               >
-                <span className="w-1.5 h-1.5 rounded-full bg-[#2DD4BF] animate-pulse" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#5B8DEF] animate-pulse" />
                 <span>{selectedTz.label} {mobileTimeString || '16:27'}</span>
               </button>
 
               {mobileTzOpen && (
-                <div className="absolute top-full right-0 mt-2 w-48 bg-[#02170f] border border-white/20 rounded shadow-2xl py-1 z-50 text-xs font-mono">
+                <div className="absolute top-full right-0 mt-2 w-48 bg-[#0A0E2A] border border-white/20 rounded shadow-2xl py-1 z-50 text-xs font-mono">
                   <div className="px-3 py-1.5 text-[0.65rem] text-[#94A3B8] uppercase border-b border-white/10 flex items-center gap-1.5">
-                    <Globe size={11} className="text-[#2DD4BF]" />
+                    <Globe size={11} className="text-[#5B8DEF]" />
                     <span>Global Timezone</span>
                   </div>
                   {timezones.map((tz) => (
@@ -307,7 +309,7 @@ export default function Navbar({ onOpenPalette, onOpenTerminal, activeTheme, onS
                         setMobileTzOpen(false);
                       }}
                       className={`w-full text-left px-3 py-2 flex items-center justify-between hover:bg-white/10 transition-colors cursor-pointer border-none bg-transparent ${
-                        selectedTz.label === tz.label ? 'text-[#2DD4BF] font-bold bg-white/5' : 'text-[#E2E8F0]'
+                        selectedTz.label === tz.label ? 'text-[#5B8DEF] font-bold bg-white/5' : 'text-[#E2E8F0]'
                       }`}
                     >
                       <span>{tz.name}</span>
@@ -322,16 +324,16 @@ export default function Navbar({ onOpenPalette, onOpenTerminal, activeTheme, onS
             <div className="relative" ref={mobileThemeRef}>
               <button
                 onClick={() => setMobileThemeOpen(!mobileThemeOpen)}
-                className="p-1.5 bg-white/10 rounded border border-white/20 text-[#2DD4BF] flex items-center justify-center cursor-pointer"
+                className="p-1.5 bg-white/10 rounded border border-white/20 text-[#5B8DEF] flex items-center justify-center cursor-pointer"
                 aria-label="Switch Theme Palette"
               >
                 <Palette size={14} />
               </button>
 
               {mobileThemeOpen && (
-                <div className="absolute top-full right-0 mt-2 w-44 bg-[#02170f] border border-white/20 rounded shadow-2xl py-1 z-50 text-xs font-mono">
+                <div className="absolute top-full right-0 mt-2 w-44 bg-[#0A0E2A] border border-white/20 rounded shadow-2xl py-1 z-50 text-xs font-mono">
                   <div className="px-3 py-1.5 text-[0.65rem] text-[#94A3B8] uppercase border-b border-white/10 flex items-center gap-1.5">
-                    <Palette size={11} className="text-[#2DD4BF]" />
+                    <Palette size={11} className="text-[#5B8DEF]" />
                     <span>Select Theme</span>
                   </div>
                   {themes.map((t) => (
@@ -342,7 +344,7 @@ export default function Navbar({ onOpenPalette, onOpenTerminal, activeTheme, onS
                         setMobileThemeOpen(false);
                       }}
                       className={`w-full text-left px-3 py-2 flex items-center justify-between hover:bg-white/10 transition-colors cursor-pointer border-none bg-transparent ${
-                        activeTheme === t.id ? 'text-[#2DD4BF] font-bold bg-white/5' : 'text-[#E2E8F0]'
+                        activeTheme === t.id ? 'text-[#5B8DEF] font-bold bg-white/5' : 'text-[#E2E8F0]'
                       }`}
                     >
                       <div className="flex items-center gap-2">
@@ -358,7 +360,7 @@ export default function Navbar({ onOpenPalette, onOpenTerminal, activeTheme, onS
             {/* Mobile Terminal Button */}
             <button
               onClick={onOpenTerminal}
-              className="p-1.5 bg-white/10 rounded border border-white/20 text-[#2DD4BF] flex items-center justify-center cursor-pointer"
+              className="p-1.5 bg-white/10 rounded border border-white/20 text-[#5B8DEF] flex items-center justify-center cursor-pointer"
               aria-label="Open Terminal Shell"
             >
               <TermIcon size={14} />
@@ -383,15 +385,15 @@ export default function Navbar({ onOpenPalette, onOpenTerminal, activeTheme, onS
 
       {/* Mobile Menu Fullscreen Overlay with Explicit Close Button & Clock */}
       {mobileOpen && (
-        <div className="fixed inset-0 z-50 bg-[#02170f]/98 backdrop-blur-2xl flex flex-col justify-between p-6 sm:p-8">
+        <div className="fixed inset-0 z-50 bg-[#0A0E2A]/98 backdrop-blur-2xl flex flex-col justify-between p-6 sm:p-8">
           
           {/* Mobile Overlay Top Header with Close Button */}
           <div className="flex items-center justify-between border-b border-white/15 pb-4">
             <div className="flex items-center gap-2">
               <span className="font-sans text-lg font-light text-[#FFFFFF]">
-                shreenidhi<span className="text-[#2DD4BF] font-semibold">.</span>
+                shreenidhi<span className="text-[#5B8DEF] font-semibold">.</span>
               </span>
-              <span className="font-mono text-xs text-[#2DD4BF] font-bold px-2 py-0.5 bg-white/5 border border-white/15 rounded">
+              <span className="font-mono text-xs text-[#5B8DEF] font-bold px-2 py-0.5 bg-white/5 border border-white/15 rounded">
                 {selectedTz.label} {mobileTimeString}
               </span>
             </div>
@@ -411,7 +413,7 @@ export default function Navbar({ onOpenPalette, onOpenTerminal, activeTheme, onS
               <button
                 key={href}
                 onClick={(e) => handleNavClick(e, href)}
-                className="block font-serif-title text-2xl sm:text-3xl text-[#FFFFFF] hover:text-[#2DD4BF] border-none bg-transparent cursor-pointer text-left w-full transition-colors"
+                className="block font-serif-title text-2xl sm:text-3xl text-[#FFFFFF] hover:text-[#5B8DEF] border-none bg-transparent cursor-pointer text-left w-full transition-colors"
               >
                 {label}
               </button>
@@ -431,7 +433,7 @@ export default function Navbar({ onOpenPalette, onOpenTerminal, activeTheme, onS
                   }}
                   className={`px-3 py-2 rounded border text-left flex items-center gap-2 cursor-pointer ${
                     activeTheme === t.id
-                      ? 'bg-[#2DD4BF]/20 border-[#2DD4BF] text-[#2DD4BF] font-bold'
+                      ? 'bg-[#5B8DEF]/20 border-[#5B8DEF] text-[#5B8DEF] font-bold'
                       : 'bg-white/5 border-white/15 text-[#E2E8F0]'
                   }`}
                 >

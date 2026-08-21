@@ -63,13 +63,13 @@ export default function ProjectsGrid() {
 
         <SectionReveal>
           <div className="flex items-center gap-3 mb-4">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#2DD4BF]" />
-            <p className="eyebrow-label text-[#2DD4BF]">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#5B8DEF]" />
+            <p className="eyebrow-label text-[#5B8DEF]">
               03 / FEATURED PROJECTS
             </p>
           </div>
           <h2 className="font-serif-title text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#FFFFFF] mb-12">
-            Featured Projects &amp; <span className="italic font-normal text-[#2DD4BF]">Architectures</span>
+            Featured Projects &amp; <span className="italic font-normal text-[#5B8DEF]">Architectures</span>
           </h2>
         </SectionReveal>
 
@@ -80,7 +80,7 @@ export default function ProjectsGrid() {
                 
                 <div>
                   <div className="flex items-center justify-between gap-4 mb-4 pb-3 border-b border-white/15">
-                    <span className="eyebrow-label text-[#2DD4BF] font-bold text-[0.7rem]">{project.category}</span>
+                    <span className="eyebrow-label text-[#5B8DEF] font-bold text-[0.7rem]">{project.category}</span>
                     <span className="font-serif-title text-xl font-bold text-[#CBD5E1]/60">{project.num}</span>
                   </div>
 
@@ -123,7 +123,7 @@ export default function ProjectsGrid() {
                         href={project.liveLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="editorial-link font-sans-body text-xs font-bold uppercase tracking-widest text-[#2DD4BF]"
+                        className="editorial-link font-sans-body text-xs font-bold uppercase tracking-widest text-[#5B8DEF]"
                       >
                         Live Demo
                         <Globe size={14} />

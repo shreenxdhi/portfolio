@@ -1,31 +1,32 @@
 @import "tailwindcss";
 
 /* ============================================================
-   CSS CUSTOM PROPERTIES — COHESIVE UNIFIED DARK LUXURY GLASS
+   CSS CUSTOM PROPERTIES — UNIFIED COBALT-BLUE DARK LUXURY GLASS
 ============================================================ */
 :root {
-  /* Dark Luxury Base */
-  --color-bottega-bg: #032015;
-  --color-bottega-dark: #02170f;
+  /* Cobalt-Blue Dark Base (#0A0E2A) */
+  --color-cobalt-bg: #0E1338;
+  --color-cobalt-dark: #0A0E2A;
 
   /* Text Contrast System — Sharp & Ultra Legible */
   --text-heading: #FFFFFF;        /* Stark, crisp white for all primary headings */
-  --text-accent: #2DD4BF;         /* Bright electric cyan accent */
+  --text-accent: #5B8DEF;         /* Brighter, cool cobalt-cyan accent */
   --text-gold: #F59E0B;           /* Warm luxury gold accent */
   --text-body: #F1F5F9;           /* High contrast slate-white (95% brightness) */
   --text-subtext: #CBD5E1;        /* Technical details & labels */
   --text-muted: #94A3B8;          /* Eyebrow & secondary metadata */
 
-  /* Glass System — Unified Dark Crystal */
-  --glass-bg: rgba(255, 255, 255, 0.08);
-  --glass-bg-hover: rgba(255, 255, 255, 0.12);
-  --glass-border: rgba(255, 255, 255, 0.18);
-  --glass-border-hover: rgba(45, 212, 191, 0.45);
+  /* Glass System — Crisp High-Contrast Panels */
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-bg-hover: rgba(255, 255, 255, 0.09);
+  --glass-border: rgba(255, 255, 255, 0.14);
+  --glass-border-hover: rgba(91, 141, 239, 0.6);
+  
   /* Typography */
   --font-display: var(--font-display), 'Outfit', system-ui, sans-serif;
   --font-sans: var(--font-sans), 'Plus Jakarta Sans', system-ui, sans-serif;
   --font-mono: var(--font-mono), 'JetBrains Mono', monospace;
-  --glass-blur: 12px;
+  --glass-blur: 14px;
 }
 
 @theme inline {
@@ -45,7 +46,7 @@ html {
 body {
   font-family: var(--font-sans);
   overflow-x: hidden;
-  background-color: var(--site-bg, #02170f);
+  background-color: var(--site-bg, #0A0E2A);
   color: var(--text-heading);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -53,9 +54,9 @@ body {
 }
 
 body.theme-bottega {
-  --site-bg: #02170f;
-  --theme-accent: #2DD4BF;
-  background-color: #02170f !important;
+  --site-bg: #0A0E2A;
+  --theme-accent: #5B8DEF;
+  background-color: #0A0E2A !important;
 }
 
 body.theme-cyber {
@@ -108,8 +109,8 @@ body.theme-tokyo {
   border-radius: 6px;
   color: var(--text-heading);
   box-shadow: 
-    0 20px 50px rgba(0, 0, 0, 0.5),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    0 20px 50px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
   transition: border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
 }
 
@@ -118,9 +119,9 @@ body.theme-tokyo {
   background: var(--glass-bg-hover);
   transform: translateY(-4px);
   box-shadow: 
-    0 28px 65px rgba(0, 0, 0, 0.6),
-    0 0 35px rgba(45, 212, 191, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    0 28px 65px rgba(0, 0, 0, 0.65),
+    0 0 35px rgba(91, 141, 239, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
 /* Legacy alias for backwards compatibility */
@@ -132,8 +133,8 @@ body.theme-tokyo {
   border-radius: 6px;
   color: var(--text-heading);
   box-shadow: 
-    0 20px 50px rgba(0, 0, 0, 0.5),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    0 20px 50px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
   transition: border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
 }
 
@@ -142,9 +143,9 @@ body.theme-tokyo {
   background: var(--glass-bg-hover);
   transform: translateY(-4px);
   box-shadow: 
-    0 28px 65px rgba(0, 0, 0, 0.6),
-    0 0 35px rgba(45, 212, 191, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    0 28px 65px rgba(0, 0, 0, 0.65),
+    0 0 35px rgba(91, 141, 239, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
 /* ============================================================
@@ -194,8 +195,8 @@ body.theme-tokyo {
   text-transform: uppercase;
   padding: 0.9rem 1.85rem;
   border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
   color: #FFFFFF;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -204,19 +205,19 @@ body.theme-tokyo {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
   transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
 
 .btn-editorial-dark:hover {
-  background: #FFFFFF;
-  color: #022c1e;
-  border-color: #FFFFFF;
+  background: #5B8DEF;
+  color: #0A0E2A;
+  border-color: #5B8DEF;
   transform: translateY(-2px);
 }
 
 /* ============================================================
-   DYNAMIC AMBIENT ORBS ANIMATION
+   DYNAMIC AMBIENT ORBS ANIMATION — COBALT BLUE TONES
 ============================================================ */
 @keyframes orbFloat1 {
   0%, 100% { transform: translate(0px, 0px) scale(1); }
@@ -248,21 +249,21 @@ body.theme-tokyo {
 .orb-1 {
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(45, 212, 191, 0.4) 0%, rgba(16, 185, 129, 0.2) 70%, transparent 100%);
+  background: radial-gradient(circle, rgba(30, 47, 191, 0.4) 0%, rgba(91, 141, 239, 0.25) 70%, transparent 100%);
   animation: orbFloat1 22s ease-in-out infinite;
 }
 
 .orb-2 {
   width: 650px;
   height: 650px;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.4) 0%, rgba(163, 230, 53, 0.2) 70%, transparent 100%);
+  background: radial-gradient(circle, rgba(91, 141, 239, 0.35) 0%, rgba(30, 58, 138, 0.2) 70%, transparent 100%);
   animation: orbFloat2 28s ease-in-out infinite;
 }
 
 .orb-3 {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(163, 230, 53, 0.35) 0%, rgba(45, 212, 191, 0.2) 70%, transparent 100%);
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, rgba(30, 47, 191, 0.2) 70%, transparent 100%);
   animation: orbFloat3 25s ease-in-out infinite;
 }
 
@@ -312,4 +313,3 @@ nextjs-portal,
     touch-action: manipulation;
   }
 }
-

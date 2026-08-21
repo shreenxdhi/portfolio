@@ -131,7 +131,7 @@ export default function CommandPalette({ isOpen, onClose, onOpenRTL, onOpenPalet
 
         {/* Modal Container */}
         <motion.div
-          className="relative w-full max-w-2xl bg-[#02170f] border border-white/25 rounded-md shadow-2xl overflow-hidden text-[#FFFFFF] z-10"
+          className="relative w-full max-w-2xl bg-[#0A0E2A] border border-white/25 rounded-md shadow-2xl overflow-hidden text-[#FFFFFF] z-10"
           initial={{ opacity: 0, scale: 0.96, y: -10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.96, y: -10 }}
@@ -139,7 +139,7 @@ export default function CommandPalette({ isOpen, onClose, onOpenRTL, onOpenPalet
         >
           {/* Search Header */}
           <div className="flex items-center gap-3 px-4 py-3.5 border-b border-white/15 bg-white/5">
-            <Search size={18} className="text-[#2DD4BF]" />
+            <Search size={18} className="text-[#5B8DEF]" />
             <input
               type="text"
               autoFocus
@@ -165,7 +165,7 @@ export default function CommandPalette({ isOpen, onClose, onOpenRTL, onOpenPalet
             ) : (
               filteredCommands.map((category) => (
                 <div key={category.category}>
-                  <div className="px-3 py-1.5 text-[0.68rem] font-bold font-mono tracking-widest text-[#2DD4BF] uppercase">
+                  <div className="px-3 py-1.5 text-[0.68rem] font-bold font-mono tracking-widest text-[#5B8DEF] uppercase">
                     {category.category}
                   </div>
                   <div className="space-y-1">
@@ -178,16 +178,16 @@ export default function CommandPalette({ isOpen, onClose, onOpenRTL, onOpenPalet
                           className="w-full flex items-center justify-between px-3 py-2.5 rounded text-left text-sm text-[#E2E8F0] hover:bg-white/10 hover:text-white transition-colors cursor-pointer border-none bg-transparent group"
                         >
                           <div className="flex items-center gap-3">
-                            <Icon size={16} className="text-[#2DD4BF] group-hover:scale-110 transition-transform" />
+                            <Icon size={16} className="text-[#5B8DEF] group-hover:scale-110 transition-transform" />
                             <span>{item.label}</span>
                           </div>
                           <div className="flex items-center gap-2">
                             {item.badge && (
-                              <span className="text-[0.62rem] font-mono font-bold px-1.5 py-0.5 rounded bg-[#2DD4BF]/20 text-[#2DD4BF] border border-[#2DD4BF]/40">
+                              <span className="text-[0.62rem] font-mono font-bold px-1.5 py-0.5 rounded bg-[#5B8DEF]/20 text-[#5B8DEF] border border-[#5B8DEF]/40">
                                 {item.badge}
                               </span>
                             )}
-                            <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity text-[#2DD4BF]" />
+                            <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity text-[#5B8DEF]" />
                           </div>
                         </button>
                       );
@@ -204,7 +204,7 @@ export default function CommandPalette({ isOpen, onClose, onOpenRTL, onOpenPalet
               <span><kbd className="px-1.5 py-0.5 bg-white/10 rounded text-[#FFFFFF]">Ctrl / ⌘ + K</kbd> toggle</span>
               <span><kbd className="px-1.5 py-0.5 bg-white/10 rounded text-[#FFFFFF]">ESC</kbd> close</span>
             </div>
-            <span className="text-[#2DD4BF]">RTL Command Palette</span>
+            <span className="text-[#5B8DEF]">RTL Command Palette</span>
           </div>
         </motion.div>
       </div>

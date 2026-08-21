@@ -89,7 +89,7 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${jakarta.variable} ${outfit.variable} ${mono.variable} antialiased`}
     >
-      <body className="min-h-screen bg-[#02170f] text-[#FFFFFF] selection:bg-[#2DD4BF] selection:text-[#02170f]">
+      <body className="min-h-screen bg-[#0A0E2A] text-[#FFFFFF] selection:bg-[#5B8DEF] selection:text-[#0A0E2A]">
         {children}
       </body>
     </html>

@@ -11,13 +11,13 @@ export default function Education() {
 
         <SectionReveal>
           <div className="flex items-center gap-3 mb-4">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#2DD4BF]" />
-            <p className="eyebrow-label text-[#2DD4BF]">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#5B8DEF]" />
+            <p className="eyebrow-label text-[#5B8DEF]">
               04 / EDUCATION
             </p>
           </div>
           <h2 className="font-serif-title text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#FFFFFF] mb-12">
-            Academic <span className="italic font-normal text-[#2DD4BF]">Foundation</span>
+            Academic <span className="italic font-normal text-[#5B8DEF]">Foundation</span>
           </h2>
         </SectionReveal>
 
@@ -28,10 +28,10 @@ export default function Education() {
               {/* Left Column */}
               <div className="lg:col-span-7 space-y-4">
                 <div className="flex items-center gap-3">
-                  <div className="p-3 bg-white/10 rounded-xs text-[#2DD4BF] border border-white/20">
+                  <div className="p-3 bg-white/10 rounded-xs text-[#5B8DEF] border border-white/20">
                     <GraduationCap size={26} />
                   </div>
-                  <span className="eyebrow-label text-[#2DD4BF]">UNDERGRADUATE DEGREE</span>
+                  <span className="eyebrow-label text-[#5B8DEF]">UNDERGRADUATE DEGREE</span>
                 </div>
 
                 <h3 className="font-serif-title text-2xl sm:text-4xl font-bold text-[#FFFFFF] leading-tight">
@@ -39,7 +39,7 @@ export default function Education() {
                 </h3>
 
                 <p className="font-sans-body text-base sm:text-lg text-[#E2E8F0] font-medium flex items-center gap-2">
-                  <MapPin size={16} className="text-[#2DD4BF] shrink-0" />
+                  <MapPin size={16} className="text-[#5B8DEF] shrink-0" />
                   Bangalore Institute of Technology, Bengaluru
                 </p>
               </div>
@@ -47,7 +47,7 @@ export default function Education() {
               {/* Right Column Highlights */}
               <div className="lg:col-span-5 border-t lg:border-t-0 lg:border-l border-white/15 pt-6 lg:pt-0 lg:pl-8 space-y-3">
                 <div className="p-3.5 bg-white/5 border border-white/15 rounded-xs">
-                  <div className="flex items-center gap-2 text-xs font-mono text-[#2DD4BF] font-semibold mb-1">
+                  <div className="flex items-center gap-2 text-xs font-mono text-[#5B8DEF] font-semibold mb-1">
                     <Award size={14} />
                     SPECIALISATION
                   </div>
@@ -57,7 +57,7 @@ export default function Education() {
                 </div>
 
                 <div className="p-3.5 bg-white/5 border border-white/15 rounded-xs">
-                  <div className="flex items-center gap-2 text-xs font-mono text-[#2DD4BF] font-semibold mb-1">
+                  <div className="flex items-center gap-2 text-xs font-mono text-[#5B8DEF] font-semibold mb-1">
                     ASIC TOOLING
                   </div>
                   <p className="text-xs text-[#E2E8F0] font-medium">
