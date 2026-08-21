@@ -25,9 +25,23 @@ export default function Hero() {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen pt-28 pb-16 px-4 sm:px-8 flex flex-col justify-between">
-      <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col justify-center">
-        <GlassPanel mode="dark" className="p-6 sm:p-12 lg:p-16 !rounded-sm border border-white/20">
+    <section id="hero" className="relative min-h-screen pt-28 pb-16 px-4 sm:px-8 flex flex-col justify-between overflow-hidden">
+      {/* Background Artwork: Risograph / Halftone Illustrated Scene */}
+      <div className="absolute inset-0 z-0 pointer-events-none select-none">
+        <picture>
+          <source srcSet="/hero-bg.webp" type="image/webp" />
+          <img
+            src="/hero-bg.png"
+            alt="Illustrated Risograph Sky & PCB Ground Hero Background"
+            className="w-full h-full object-cover object-center"
+          />
+        </picture>
+        {/* Subtle Scrim for optimal text contrast without obscuring moon or silhouette figure */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/25 to-black/60 pointer-events-none" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto w-full flex-1 flex flex-col justify-center">
+        <GlassPanel mode="dark" className="p-6 sm:p-12 lg:p-16 !rounded-sm border border-white/20 backdrop-blur-md">
           <div>
             <SectionReveal delay={0.1}>
               <h1 className="font-serif-title text-4xl sm:text-7xl lg:text-8xl font-bold tracking-tight text-[#FFFFFF] mb-4 sm:mb-6 leading-[1.05]">
@@ -63,7 +77,7 @@ export default function Hero() {
       </div>
 
       {/* Bottom Scroll Indicator */}
-      <div className="max-w-7xl mx-auto w-full pt-6 flex justify-between items-center text-xs font-mono text-[#CBD5E1]">
+      <div className="relative z-10 max-w-7xl mx-auto w-full pt-6 flex justify-between items-center text-xs font-mono text-[#CBD5E1]">
         <span className="tracking-widest hidden sm:inline">VLSI ARCHITECTURE &amp; DIGITAL IC DESIGN</span>
         <button
           onClick={(e) => handleScrollTo(e, '#about')}
